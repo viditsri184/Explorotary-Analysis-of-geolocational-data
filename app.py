@@ -14,8 +14,10 @@ st.markdown(
 st.markdown(
     """
     Major project by
-    - [Aakash Kaushik](ak9169@srmist.edu.in)
-    - [Swarnima Gupta](sg7424@srmist.edu.in)
+    - [Vidit Srivastava]
+    - [Shristh Dev]
+    - [Vaibhav Singh]
+    - [Satyam Srivastav]
     """
 )
 
@@ -32,7 +34,7 @@ if st.button("Show map"):
     if not input_long or not input_lat:
         st.warning("Please enter the longitude and latitude")
     else:
-        url = f"https://discover.search.hereapi.com/v1/discover?in=circle:{input_long},{input_lat};r=20000&q=apartment&apiKey=uJHMEjeagmFGldXp661-pDMf4R-PxvWIu7I68UjYC5Q"
+        url = f"https://discover.search.hereapi.com/v1/discover?in=circle:{input_long},{input_lat};r=20000&q=apartment&apiKey=-_5It5AaunNhv8BqtYoXGR1zxHQbAxSTz9gQJplvRuw"
         data = requests.get(url).json()
         d = json_normalize(data["items"])
         d.to_csv("api-data/apartment.csv")
@@ -49,7 +51,7 @@ if st.button("Show map"):
                 "address.postalCode",
                 "contacts",
                 "id",
-            ]
+    ]
         ]
         d2.to_csv("api-data/cleaned_apartment.csv")
 
@@ -66,7 +68,7 @@ if st.button("Show map"):
             longitude = lng
 
             search_query = "cafe"  # Search for any cafes
-            url = "https://discover.search.hereapi.com/v1/discover?in=circle:{},{};r={}&q={}&apiKey=uJHMEjeagmFGldXp661-pDMf4R-PxvWIu7I68UjYC5Q".format(
+            url = "https://discover.search.hereapi.com/v1/discover?in=circle:{},{};r={}&q={}&apiKey=-_5It5AaunNhv8BqtYoXGR1zxHQbAxSTz9gQJplvRuw".format(
                 latitude, longitude, radius, search_query
             )
             results = requests.get(url).json()
@@ -77,7 +79,7 @@ if st.button("Show map"):
                 CafeList.append(0)
 
             search_query = "gym"  # Search for any gyms
-            url = "https://discover.search.hereapi.com/v1/discover?in=circle:{},{};r={}&q={}&apiKey=uJHMEjeagmFGldXp661-pDMf4R-PxvWIu7I68UjYC5Q".format(
+            url = "https://discover.search.hereapi.com/v1/discover?in=circle:{},{};r={}&q={}&apiKey=-_5It5AaunNhv8BqtYoXGR1zxHQbAxSTz9gQJplvRuw".format(
                 latitude, longitude, radius, search_query
             )
             results = requests.get(url).json()
@@ -88,7 +90,7 @@ if st.button("Show map"):
                 GymList.append(0)
 
             search_query = "department-store"  # search for supermarkets
-            url = "https://discover.search.hereapi.com/v1/discover?in=circle:{},{};r={}&q={}&apiKey=uJHMEjeagmFGldXp661-pDMf4R-PxvWIu7I68UjYC5Q".format(
+            url = "https://discover.search.hereapi.com/v1/discover?in=circle:{},{};r={}&q={}&apiKey=-_5It5AaunNhv8BqtYoXGR1zxHQbAxSTz9gQJplvRuw".format(
                 latitude, longitude, radius, search_query
             )
             results = requests.get(url).json()
