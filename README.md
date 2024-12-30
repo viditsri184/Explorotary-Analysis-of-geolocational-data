@@ -20,8 +20,3 @@ pipenv install
 streamlit run app.py
 ```
 
-## Results
-
-![screenshot of app screen](./assets/app-screen.png "App Screen")
-![screenshot of output screen](./assets/output.png "Output Screen")
-
